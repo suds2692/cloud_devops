@@ -1,0 +1,26 @@
+---
+- name: copy
+  hosts: web-servers
+  become: true
+  become_user: root
+  gather_facts: true
+  tasks:
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/index.html dest=/var/www/html/index.html
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/second.html dest=/var/www/html/second.html
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/try.html dest=/var/www/html/try.html
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/d3.layout.js dest=/var/www/html/d3.layout.js
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/d3js.js dest=/var/www/html/d3js.js
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/d3v2.js dest=/var/www/html/d3v2.js
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/data.csv dest=/var/www/html/data.csv
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/data.json dest=/var/www/html/data.json
+    - name: "copy file"
+      copy: src=/root/Downloads/Website/ADAssign/style.css dest=/var/www/html/style.css
+
