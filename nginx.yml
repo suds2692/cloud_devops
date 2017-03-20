@@ -1,0 +1,21 @@
+---
+
+- hosts : test-servers
+
+  tasks :
+  - name : download epel 
+    get_url : url=http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm dest=/tmp/epel-release-7-9.noarch.rpm  
+  - name : install epel
+    yum :
+     name : /tmp/epel-release-7-9.noarch.rpm
+     state : present
+
+  - name : install nginx
+    yum : pkg=nginx state=installed
+
+    notify:
+    - start nginx 
+  
+  handlers : 
+  - name : start nginx
+    service : name=nginx state=started
